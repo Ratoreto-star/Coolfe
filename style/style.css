@@ -6,6 +6,7 @@
     --accent-color:#3CDD8A;
     --primary-color:#151515;
     --secondary-color:#2F2D2D;
+    --accent-font:    font-family: "Martian Mono", monospace;
 }
 
 *{
@@ -50,6 +51,7 @@ height: 50px;
        border: none;
        background: none;
        outline: none;
+       
     }
 }
 
@@ -104,6 +106,7 @@ height: 50px;
     background: linear-gradient(120deg,white 0,1%,black);
     color: white;
     position: relative;
+    cursor: pointer;
     overflow: hidden;
 
     &:after{
@@ -194,6 +197,137 @@ height: 50px;
         width: 30px;
     }
  }
+ .modal{
+    width: 300px;
+    height: 310px;
+    background: rgba(204, 204, 204, 0.473);
+     color: rgb(0, 0, 0);
+    border-radius: 20px;
+    font-size: 1.2rem;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    left: calc(50% -150px);
+    top: calc(50% -150px);
+    z-index: 1000;
+    padding: 10px;
+      gap: 5px;
+
+    & h4{
+        font-family:var(--primary-font);
+        color: black;
+        font-size: 1.4rem;
+        margin-top: 40%;
+        text-align: center;
+       
+    }
+ }
+ .modal-wraper{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+    animation: slideUp 2s 1;
+ }
+ #poster{
+    width: 200px;
+    position: absolute;
+    left: calc(50% - 100px);
+    top: -80px;
+ }
+
+ #close-modal{
+        position: absolute;
+        left:10px;
+        top: 10px;
+        background: none;
+        border: none;
+        transform: rotate(45deg);
+        transition: all .2s ease;
+        &:hover{
+            cursor: pointer;
+            transform: rotate(45deg) scale(1.2);
+        }
+     }
+
+
+ .feeback{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+      color: black;
+    & h6{
+         color: black;
+           display: flex;
+    align-items: center;
+  
+    }
+ }
+ .price-modal{
+    font-size: 1.5rem;
+     padding-top: 15px;
+ }
+ .button-modal{
+    
+    
+  
+ 
+    
+    width: 270px;
+    height: 50px;
+    background: white;
+    color: black;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    border-radius: 15px; 
+    cursor: pointer;
+    
+     }
+
+.success-modal{
+    position: fixed;
+   width: 350px;
+   height: 350px;
+    background:rgba(0, 0, 0, 0.486);
+    z-index: 1000;
+    left: calc(50% - 175px);
+    top: calc(50% - 175px);
+    display: none;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    border-radius: 10px;
+    backdrop-filter: blur(15px);
+    color: white;
+    animation: blink 3s 1;
+}
+.success-modal-text{
+    font-weight: bold;
+    font-size: 1.5rem;
+    font-family: var(--accent-font);
+    color: white;
+}
+
+@keyframes blink{
+    0%{
+      opacity: 0;
+    }
+    60%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
 @keyframes slide {
     0%{
         transform: translateX(-100px);
@@ -237,7 +371,7 @@ height: 50px;
         padding: 20px;
         
 
-        & p{
+        & .information{
          
             width: 300px;
             font-size: 0.8rem;

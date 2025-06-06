@@ -26,8 +26,9 @@
 
          
    <div class="controls">
-     <button><img src="./img/search.png" alt=""></button>
-     <button> <img src="./img/waves.png" alt=""></button>
+     <button><img src="./img/search.png" alt=""></button> <button> <img src="./img/waves.png" alt=""></button>
+     
+     <h4>Ваши баллы:0</h4>
    </div>
 
     </header>
@@ -39,11 +40,50 @@
          
           <h2>Mochaccino</h2>
           <h3>Dalgona</h3>
-          <p>A coffee drink made by whipping equal parts of instant coffee powder, sugar and hot water to a creamy state, 
+          <p class="information">A coffee drink made by whipping equal parts of instant coffee powder, sugar and hot water to a creamy state, 
             followed by adding it to cold or hot milk. Sometimes the drink is decorated with coffee powder, cocoa.
           </p>
           <button id="start-btn">ХОЧУ КОФЕ</button>
-        </div>
+
+
+          <div class="modal-wraper">
+            <div class="modal">
+            
+               <img src="./img/coffee-poster.png"id="poster" alt="">
+
+
+               <button id="close-modal">  <img src="./img/plus.png" alt=""></button>
+
+             
+
+             <h4> Coolfe Coffe</h4>
+              <h6>Оценка Кофе</h6>
+             <div class="feeback">
+             
+              <img src="./img/star.png" alt="">
+              <img src="./img/star.png" alt="">
+              <img src="./img/star.png" alt="">
+              <img src="./img/star.png" alt="">
+              <img src="./img/star.png" alt="">
+
+              <span>4.1</span>
+             </div>
+             <div class="price-modal">
+              <h6>Price:15$</h6>
+              
+             </div>
+            <button class="button-modal">Купить</button>
+            </div>
+
+          </div>
+
+         <div class="success-modal">
+              <img width="140px" src="./img/takeaway.png" alt="">
+              <p class="success-modal-text">Успешно! <br> Ожидайте ваш заказ</p>
+               <img src="./img/check.png" alt="">
+       </div>
+        
+          </div>
 
 
         <div class="main-sect-design">
@@ -180,5 +220,37 @@
          </div>
 
     </footer>
+
+
+    <script>
+    let callModalBth = document.getElementById("start-btn")
+    let closeModalBtn = document.getElementById("close-modal")
+    let modalWraper = document.querySelector(".modal-wraper")
+    let succesModal = document.querySelector(".success-modal")
+    let buyBtn = document.querySelector(".button-modal")
+
+
+    let isActive = false;
+
+    callModalBth.addEventListener('click', ()=>{
+      isActive=true;
+      modalWraper.style.display= 'flex';
+    })  ;
+   closeModalBtn.addEventListener('click', ()=>{
+    isActive=false;
+    modalWraper.style.display='none';
+   })
+    
+     buyBtn.addEventListener('click', ()=>{
+     succesModal.style.display = 'flex';
+     modalWraper.style.display = 'none'
+     let timeout = setTimeout(()=>{
+          succesModal.style.display = 'none';
+     },3000)
+     
+   }
+  )
+ 
+    </script>
 </body>
 </html>
